@@ -1,8 +1,8 @@
-![Imgur](https://i.imgur.com/o2TnhEr.png)
+![Imgur](https://i.imgur.com/LpMBMs2.png)
 
 [![HitCount](http://hits.dwyl.io/Highjhacker/pyrark.svg)](http://hits.dwyl.io/Highjhacker/pyrark) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
 
-# Pyrark
+# Pyark
 
 Ark API Wrapper in Python.
 
@@ -19,7 +19,7 @@ Ark API Wrapper in Python.
 ### Account
 
 ```python
-from pyrark import Account
+from pyark import Account
 acc = Account()
 print(acc.get_balance("ANwjGUcVbLXpqbBUWbjUBQWkr4MWVDuJu9"))
 
@@ -29,7 +29,7 @@ print(acc.get_balance("ANwjGUcVbLXpqbBUWbjUBQWkr4MWVDuJu9"))
 ### Block
 
 ```python
-from pyrark import Block
+from pyark import Block
 b = Block()
 print(b.get_block("570934191207974498"))
 
@@ -39,7 +39,7 @@ print(b.get_block("570934191207974498"))
 ### Delegate
 
 ```python
-from pyrark import Delegate
+from pyark import Delegate
 d = Delegate()
 print(d.search_delegates())
 
@@ -49,7 +49,7 @@ print(d.search_delegates())
 ### Loader
 
 ```python
-from pyrark import Loader
+from pyark import Loader
 l = Loader()
 print(l.get_status())
 
@@ -59,7 +59,7 @@ print(l.get_status())
 ### MultiSignature
 
 ```python
-from pyrark import MultiSignature
+from pyark import MultiSignature
 m = MultiSignature()
 print(m.get_pending("02c7455bebeadde04728441e0f57f82f972155c088252bf7c1365eb0dc84fbf5de"))
 
@@ -69,7 +69,7 @@ print(m.get_pending("02c7455bebeadde04728441e0f57f82f972155c088252bf7c1365eb0dc8
 ### Peer
 
 ```python
-from pyrark import Peer
+from pyark import Peer
 p = Peer()
 print(p.get_peer("78.229.106.139", 4001))
 
@@ -89,7 +89,7 @@ print(s.get_signature_fee())
 ### Transaction
 
 ```python
-from pyrark import Transaction
+from pyark import Transaction
 t = Transaction()
 print(t.get_transactions(limit=5, orderBy="timestamp"))
 
@@ -99,7 +99,7 @@ print(t.get_transactions(limit=5, orderBy="timestamp"))
 ### Transport
 
 ```python
-from pyrark import Transport
+from pyark import Transport
 t = Transport()
 print(t.get_status())
 
@@ -122,4 +122,4 @@ print(t.get_status())
 
 ## License
 
-Pyrark is under MIT license. See the [LICENSE file](https://github.com/Highjhacker/pyrark/blob/master/LICENSE) for more informations.
+Pyark is under MIT license. See the [LICENSE file](https://github.com/Highjhacker/pyrark/blob/master/LICENSE) for more informations.

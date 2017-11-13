@@ -1,4 +1,4 @@
-[Imgur](https://i.imgur.com/o2TnhEr.png)
+![Imgur](https://i.imgur.com/o2TnhEr.png)
 
 [![HitCount](http://hits.dwyl.io/Highjhacker/pyrark.svg)](http://hits.dwyl.io/Highjhacker/pyrark) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
 

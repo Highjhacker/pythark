@@ -106,7 +106,9 @@ print(t.get_status())
 
 ## TODOS
 
-- [ ] Write documentation
+- [x] Core code
+- [x] Write documentation
+    - [ ] Basic docs written, need to polish.
 - [ ] Unit testing
 - [ ] Package it
 - [ ] Travis 

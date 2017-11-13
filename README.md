@@ -1,8 +1,8 @@
-![Imgur](https://i.imgur.com/LpMBMs2.png)
+![Imgur](https://i.imgur.com/ysh3akS.png)
 
 [![HitCount](http://hits.dwyl.io/Highjhacker/pyrark.svg)](http://hits.dwyl.io/Highjhacker/pyrark) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
 
-# Pyark
+# Pythark
 
 Ark API Wrapper in Python.
 
@@ -12,6 +12,10 @@ Ark API Wrapper in Python.
 
 ## Installation
 
+```shell
+pip install pythark
+```
+
 ## Application Example
 
 ## Usage
@@ -19,7 +23,7 @@ Ark API Wrapper in Python.
 ### Account
 
 ```python
-from pyark import Account
+from pythark import Account
 acc = Account()
 print(acc.get_balance("ANwjGUcVbLXpqbBUWbjUBQWkr4MWVDuJu9"))
 
@@ -29,7 +33,7 @@ print(acc.get_balance("ANwjGUcVbLXpqbBUWbjUBQWkr4MWVDuJu9"))
 ### Block
 
 ```python
-from pyark import Block
+from pythark import Block
 b = Block()
 print(b.get_block("570934191207974498"))
 
@@ -39,7 +43,7 @@ print(b.get_block("570934191207974498"))
 ### Delegate
 
 ```python
-from pyark import Delegate
+from pythark import Delegate
 d = Delegate()
 print(d.search_delegates())
 
@@ -49,7 +53,7 @@ print(d.search_delegates())
 ### Loader
 
 ```python
-from pyark import Loader
+from pythark import Loader
 l = Loader()
 print(l.get_status())
 
@@ -59,7 +63,7 @@ print(l.get_status())
 ### MultiSignature
 
 ```python
-from pyark import MultiSignature
+from pythark import MultiSignature
 m = MultiSignature()
 print(m.get_pending("02c7455bebeadde04728441e0f57f82f972155c088252bf7c1365eb0dc84fbf5de"))
 
@@ -69,7 +73,7 @@ print(m.get_pending("02c7455bebeadde04728441e0f57f82f972155c088252bf7c1365eb0dc8
 ### Peer
 
 ```python
-from pyark import Peer
+from pythark import Peer
 p = Peer()
 print(p.get_peer("78.229.106.139", 4001))
 
@@ -79,7 +83,7 @@ print(p.get_peer("78.229.106.139", 4001))
 ### Signature
 
 ```python
-from pyrark import Signature
+from pythark import Signature
 s = Signature()
 print(s.get_signature_fee())
 
@@ -89,7 +93,7 @@ print(s.get_signature_fee())
 ### Transaction
 
 ```python
-from pyark import Transaction
+from pythark import Transaction
 t = Transaction()
 print(t.get_transactions(limit=5, orderBy="timestamp"))
 
@@ -99,7 +103,7 @@ print(t.get_transactions(limit=5, orderBy="timestamp"))
 ### Transport
 
 ```python
-from pyark import Transport
+from pythark import Transport
 t = Transport()
 print(t.get_status())
 
@@ -111,8 +115,11 @@ print(t.get_status())
 - [x] Core code
 - [x] Write documentation
     - [ ] Basic docs written, need to polish.
-- [ ] Unit testing
-- [ ] Package it
+- [x] Unit testing
+    - [ ] Check if it can be better.
+- [x] Package it
+    - [ ] Seems OK right now, distributed on PyPi, but have to be sure it's OK for everyone on
+          X python version and differents OS
 - [ ] Travis 
 - [ ] Better errors handling for the models methods
 
@@ -122,4 +129,4 @@ print(t.get_status())
 
 ## License
 
-Pyark is under MIT license. See the [LICENSE file](https://github.com/Highjhacker/pyrark/blob/master/LICENSE) for more informations.
+pythark is under MIT license. See the [LICENSE file](https://github.com/Highjhacker/pythark/blob/master/LICENSE) for more informations.

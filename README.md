@@ -1,3 +1,5 @@
+![](https://files.slack.com/files-pri/T2AC8N7RQ-F7Z8RLLRH/banner_____python.png)
+
 [![HitCount](http://hits.dwyl.io/Highjhacker/pyrark.svg)](http://hits.dwyl.io/Highjhacker/pyrark) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
 
 # Pyrark
@@ -112,6 +114,7 @@ print(t.get_status())
 - [ ] Unit testing
 - [ ] Package it
 - [ ] Travis 
+- [ ] Better errors handling for the models methods
 
 ## Authors
 

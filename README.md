@@ -18,6 +18,8 @@ pip install pythark
 
 ## Application Example
 
+- [PytharkFlask](https://github.com/Highjhacker/PytharkFlask) - Example of a web application using Flask and Pythark
+
 ## Usage
 
 ### Account
@@ -122,6 +124,8 @@ print(t.get_status())
           X python version and differents OS
 - [x] Travis
     - [ ] Missing support for python 3.2
+    - [ ] OSX Support ?
+    - [ ] Windows support ?
 - [ ] Better errors handling for the models methods
 - [ ] Sample flask app
 - [ ] Sample CLI app

@@ -1,6 +1,6 @@
 ![Imgur](https://i.imgur.com/ysh3akS.png)
 
-[![HitCount](http://hits.dwyl.io/Highjhacker/pyrark.svg)](http://hits.dwyl.io/Highjhacker/pyrark) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
+[![HitCount](http://hits.dwyl.io/Highjhacker/pyrark.svg)](http://hits.dwyl.io/Highjhacker/pyrark) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)[![Build Status](https://travis-ci.org/Highjhacker/pythark.svg?branch=master)](https://travis-ci.org/Highjhacker/pythark)
 
 # Pythark
 
@@ -122,6 +122,8 @@ print(t.get_status())
           X python version and differents OS
 - [ ] Travis 
 - [ ] Better errors handling for the models methods
+- [ ] Sample flask app
+- [ ] Sample CLI app
 
 ## Authors
 

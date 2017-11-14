@@ -1,6 +1,6 @@
 ![Imgur](https://i.imgur.com/ysh3akS.png)
 
-[![HitCount](http://hits.dwyl.io/Highjhacker/pyrark.svg)](http://hits.dwyl.io/Highjhacker/pyrark) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)[![Build Status](https://travis-ci.org/Highjhacker/pythark.svg?branch=master)](https://travis-ci.org/Highjhacker/pythark)
+[![HitCount](http://hits.dwyl.io/Highjhacker/pyrark.svg)](http://hits.dwyl.io/Highjhacker/pyrark) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![Build Status](https://travis-ci.org/Highjhacker/pythark.svg?branch=master)](https://travis-ci.org/Highjhacker/pythark)
 
 # Pythark
 
@@ -120,7 +120,8 @@ print(t.get_status())
 - [x] Package it
     - [ ] Seems OK right now, distributed on PyPi, but have to be sure it's OK for everyone on
           X python version and differents OS
-- [ ] Travis 
+- [x] Travis
+    - [ ] Missing support for python 3.2
 - [ ] Better errors handling for the models methods
 - [ ] Sample flask app
 - [ ] Sample CLI app

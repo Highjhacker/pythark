@@ -11,4 +11,3 @@ script:
   - python -m unittest discover
 os:
   - linux
-  - osx

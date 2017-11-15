@@ -1,12 +1,10 @@
 from .api import API
 
 
-class Peer:
+class Peer(API):
     """
     Operations for Peers.
     """
-    def __init__(self):
-        self.api = API()
 
     def get_peer(self, ip, port):
         """ Get a single peer.
@@ -15,7 +13,7 @@ class Peer:
         :param port: Valid port of the peer.
         :return:
         """
-        resp = self.api.get("api/peers/get", ip=ip, port=port)
+        resp = self.get("api/peers/get", ip=ip, port=port)
         return resp.json()
 
     def get_peers(self):
@@ -23,7 +21,7 @@ class Peer:
 
         :return:
         """
-        resp = self.api.get("api/peers")
+        resp = self.get("api/peers")
         return resp.json()
 
     def get_peer_version(self):
@@ -31,5 +29,5 @@ class Peer:
 
         :return:
         """
-        resp = self.api.get("api/peers/version")
+        resp = self.get("api/peers/version")
         return resp.json()

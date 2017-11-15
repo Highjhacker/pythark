@@ -1,12 +1,10 @@
 from .api import API
 
 
-class MultiSignature:
+class MultiSignature(API):
     """
     Operations for MultiSignatures.
     """
-    def __init__(self):
-        self.api = API()
 
     def get_pending(self, publicKey):
         """ Get pending multi signatures transactions.
@@ -14,7 +12,7 @@ class MultiSignature:
         :param publicKey: A valid Ark publicKey.
         :return:
         """
-        resp = self.api.get("api/multisignatures/pending", publicKey=publicKey)
+        resp = self.get("api/multisignatures/pending", publicKey=publicKey)
         return resp.json()
 
     def get_accounts(self, publicKey):
@@ -24,5 +22,5 @@ class MultiSignature:
         :param publicKey: A valid Ark publicKey.
         :return:
         """
-        resp = self.api.get("api/multisignatures/accounts", publicKey=publicKey)
+        resp = self.get("api/multisignatures/accounts", publicKey=publicKey)
         return resp.json()

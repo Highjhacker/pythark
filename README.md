@@ -114,21 +114,22 @@ print(t.get_status())
 
 ## TODOS
 
-- [x] Core code
-- [x] Write documentation
+- [x] Core code.
+- [x] Write documentation.
     - [ ] Basic docs written, need to polish.
-- [x] Unit testing
+- [x] Unit testing.
     - [ ] Check if it can be better.
-- [x] Package it
+- [x] Package it.
     - [ ] Seems OK right now, distributed on PyPi, but have to be sure it's OK for everyone on
-          X python version and differents OS
-- [x] Travis
-    - [ ] Missing support for python 3.2
+          X python version and differents OS.
+- [x] Travis.
+    - [ ] Missing support for python 3.2.
     - [ ] OSX Support ?
     - [ ] Windows support ?
-- [ ] Better errors handling for the models methods
-- [ ] Sample flask app
-- [ ] Sample CLI app
+- [ ] Better errors handling for the models methods.
+- [x] Sample flask app.
+- [ ] Sample CLI app.
+- [ ] Integrate it to the DiscArk bot.
 
 ## Authors
 

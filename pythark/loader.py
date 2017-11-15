@@ -1,19 +1,19 @@
 from .api import API
 
 
-class Loader:
+class Loader(API):
     """
     Operations for Loaders.
     """
-    def __init__(self):
-        self.api = API()
+#    def __init__(self):
+#        self.api = API()
 
     def get_status(self):
         """ Get the blockchain status.
 
         :return:
         """
-        resp = self.api.get("api/loader/status")
+        resp = self.get("api/loader/status")
         return resp.json()
 
     def get_sync(self):
@@ -21,7 +21,7 @@ class Loader:
 
         :return:
         """
-        resp = self.api.get("api/loader/status/sync")
+        resp = self.get("api/loader/status/sync")
         return resp.json()
 
     def autoconfigure(self):
@@ -29,5 +29,5 @@ class Loader:
 
         :return:
         """
-        resp = self.api.get("api/loader/autoconfigure")
+        resp = self.get("api/loader/autoconfigure")
         return resp.json()

@@ -1,12 +1,10 @@
 from .api import API
 
 
-class Delegate:
+class Delegate(API):
     """
     Operations for Delegates.
     """
-    def __init__(self):
-        self.api = API()
 
     def get_delegates_count(self, address):
         """ Get the count of delegates.
@@ -14,7 +12,7 @@ class Delegate:
         :param address: A valid Ark address.
         :return:
         """
-        resp = self.api.get("api/delegates/count", address=address)
+        resp = self.get("api/delegates/count", address=address)
         return resp.json()
 
     def search_delegates(self, query, **kwargs):
@@ -24,7 +22,7 @@ class Delegate:
         :param kwargs: Optionnal parameters. limit
         :return:
         """
-        resp = self.api.get("api/delegates/search", q=query, **kwargs)
+        resp = self.get("api/delegates/search", q=query, **kwargs)
         return resp.json()
 
     def get_voters(self, publicKey):
@@ -33,7 +31,7 @@ class Delegate:
         :param publicKey: A valid Ark publicKey.
         :return:
         """
-        resp = self.api.get("api/delegates/voters", publicKey=publicKey)
+        resp = self.get("api/delegates/voters", publicKey=publicKey)
         return resp.json()
 
     def get_delegate(self, username):
@@ -42,7 +40,7 @@ class Delegate:
         :param username: The delegate's name.
         :return:
         """
-        resp = self.api.get("api/delegates/get", username=username)
+        resp = self.get("api/delegates/get", username=username)
         return resp.json()
 
     def get_delegate_publickey(self, publicKey):
@@ -51,7 +49,7 @@ class Delegate:
         :param publicKey: A valid Ark publicKey.
         :return:
         """
-        resp = self.api.get("api/delegates/get", publicKey=publicKey)
+        resp = self.get("api/delegates/get", publicKey=publicKey)
         return resp.json()
 
     def get_delegates(self, **kwargs):
@@ -60,7 +58,7 @@ class Delegate:
         :param kwargs: Optionnal parameters. orderBy, limit, offset.
         :return:
         """
-        resp = self.api.get("api/delegates", **kwargs)
+        resp = self.get("api/delegates", **kwargs)
         return resp.json()
 
     def get_delegate_fee(self, address):
@@ -69,7 +67,7 @@ class Delegate:
         :param address:
         :return:
         """
-        resp = self.api.get("api/delegates/fee", address=address)
+        resp = self.get("api/delegates/fee", address=address)
         return resp.json()
 
     def get_forged_by_account(self, generatorPublicKey):
@@ -78,7 +76,7 @@ class Delegate:
         :param generatorPublicKey: A valid Ark generatorPublicKey.
         :return:
         """
-        resp = self.api.get("api/delegates/forging/getForgedByAccount", generatorPublicKey=generatorPublicKey)
+        resp = self.get("api/delegates/forging/getForgedByAccount", generatorPublicKey=generatorPublicKey)
         return resp.json()
 
     def get_next_forgers(self, address):
@@ -87,5 +85,5 @@ class Delegate:
         :param address: A valid Ark address.
         :return:
         """
-        resp = self.api.get("api/delegates/getNextForgers", address=address)
+        resp = self.get("api/delegates/getNextForgers", address=address)
         return resp.json()

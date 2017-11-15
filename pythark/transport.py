@@ -1,19 +1,17 @@
 from .api import API
 
 
-class Transport:
+class Transport(API):
     """
     Operations for Transports.
     """
-    def __init__(self):
-        self.api = API()
 
     def get_peers(self):
         """ Get a list of peers.
 
         :return:
         """
-        resp = self.api.get("peer/list")
+        resp = self.get("peer/list")
         return resp.json()
 
     def get_common_blocks(self, ids):
@@ -22,7 +20,7 @@ class Transport:
         :param ids: List of Block ids.
         :return:
         """
-        resp = self.api.get("peer/blocks/common", ids=ids)
+        resp = self.get("peer/blocks/common", ids=ids)
         return resp.json()
 
     def get_blocks(self, address):
@@ -31,7 +29,7 @@ class Transport:
         :param address: A valid Ark address.
         :return:
         """
-        resp = self.api.get("peer/blocks", address=address)
+        resp = self.get("peer/blocks", address=address)
         return resp.json()
 
     def get_block(self, address):
@@ -41,7 +39,7 @@ class Transport:
         :param address: A valid Ark address.
         :return:
         """
-        resp = self.api.get("peer/block", address=address)
+        resp = self.get("peer/block", address=address)
         return resp.json()
 
     def get_transactions(self):
@@ -49,7 +47,7 @@ class Transport:
 
         :return:
         """
-        resp = self.api.get("peer/transactions")
+        resp = self.get("peer/transactions")
         return resp.json()
 
     def post_transaction(self):
@@ -65,7 +63,7 @@ class Transport:
         :param ids: A list of valid Transaction id
         :return:
         """
-        resp = self.api.get("peer/transactionsFromIds", ids=ids)
+        resp = self.get("peer/transactionsFromIds", ids=ids)
         return resp.json()
 
     def get_height(self):
@@ -73,7 +71,7 @@ class Transport:
 
         :return:
         """
-        resp = self.api.get("peer/height")
+        resp = self.get("peer/height")
         return resp.json()
 
     def get_status(self):
@@ -81,5 +79,5 @@ class Transport:
 
         :return:
         """
-        resp = self.api.get("peer/status")
+        resp = self.get("peer/status")
         return resp.json()

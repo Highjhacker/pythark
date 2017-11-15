@@ -1,12 +1,10 @@
 from .api import API
 
 
-class Block:
+class Block(API):
     """
     Operations for Blocks.
     """
-    def __init__(self):
-        self.api = API()
 
     def get_block(self, id):
         """ Get block by id.
@@ -14,7 +12,7 @@ class Block:
         :param id: Valid Block ID.
         :return:
         """
-        resp = self.api.get("api/blocks/get", id=id)
+        resp = self.get("api/blocks/get", id=id)
         return resp.json()
 
     def get_blocks(self, **kwargs):
@@ -24,7 +22,7 @@ class Block:
         previousBlock, height
         :return:
         """
-        resp = self.api.get("api/blocks", **kwargs)
+        resp = self.get("api/blocks", **kwargs)
         return resp.json()
 
     def get_height(self):
@@ -32,7 +30,7 @@ class Block:
 
         :return:
         """
-        resp = self.api.get("api/blocks/getHeight")
+        resp = self.get("api/blocks/getHeight")
         return resp.json()
 
     def get_epoch(self):
@@ -40,7 +38,7 @@ class Block:
 
         :return:
         """
-        resp = self.api.get("api/blocks/getEpoch")
+        resp = self.get("api/blocks/getEpoch")
         return resp.json()
 
     def get_nethash(self):
@@ -48,7 +46,7 @@ class Block:
 
         :return:
         """
-        resp = self.api.get("api/blocks/getNethash")
+        resp = self.get("api/blocks/getNethash")
         return resp.json()
 
     def get_fee(self):
@@ -56,7 +54,7 @@ class Block:
 
         :return:
         """
-        resp = self.api.get("api/blocks/getFee")
+        resp = self.get("api/blocks/getFee")
         return resp.json()
 
     def get_fees(self):
@@ -64,7 +62,7 @@ class Block:
 
         :return:
         """
-        resp = self.api.get("api/blocks/getFees")
+        resp = self.get("api/blocks/getFees")
         return resp.json()
 
     def get_milestone(self):
@@ -72,7 +70,7 @@ class Block:
 
         :return:
         """
-        resp = self.api.get("api/blocks/getMilestone")
+        resp = self.get("api/blocks/getMilestone")
         return resp.json()
 
     def get_reward(self):
@@ -80,7 +78,7 @@ class Block:
 
         :return:
         """
-        resp = self.api.get("api/blocks/getReward")
+        resp = self.get("api/blocks/getReward")
         return resp.json()
 
     def get_supply(self):
@@ -88,7 +86,7 @@ class Block:
 
         :return:
         """
-        resp = self.api.get("api/blocks/getSupply")
+        resp = self.get("api/blocks/getSupply")
         return resp.json()
 
     def get_status(self):
@@ -96,5 +94,5 @@ class Block:
 
         :return:
         """
-        resp = self.api.get("api/blocks/getStatus")
+        resp = self.get("api/blocks/getStatus")
         return resp.json()

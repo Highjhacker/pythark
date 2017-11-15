@@ -1,12 +1,10 @@
 from .api import API
 
 
-class Account:
+class Account(API):
     """
     Operations for Accounts.
     """
-    def __init__(self):
-        self.api = API()
 
     def get_balance(self, address):
         """ Get the balance of an account.
@@ -14,7 +12,7 @@ class Account:
         :param address: A valid Ark address.
         :return:
         """
-        resp = self.api.get("api/accounts/getBalance", address=address)
+        resp = self.get("api/accounts/getBalance", address=address)
         return resp.json()
 
     def get_public_key(self, address):
@@ -23,7 +21,7 @@ class Account:
         :param address: A valid Ark address.
         :return:
         """
-        resp = self.api.get("api/accounts/getPublickey", address=address)
+        resp = self.get("api/accounts/getPublickey", address=address)
         return resp.json()
 
     def get_delegate_fee(self):
@@ -31,7 +29,7 @@ class Account:
 
         :return:
         """
-        resp = self.api.get("api/accounts/delegates/fee")
+        resp = self.get("api/accounts/delegates/fee")
         return resp.json()
 
     def get_delegates(self, address, **kwargs):
@@ -41,7 +39,7 @@ class Account:
         :param kwargs: Optionnal parameters. orderBy, limit, offset
         :return:
         """
-        resp = self.api.get("api/accounts/delegates", address=address, **kwargs)
+        resp = self.get("api/accounts/delegates", address=address, **kwargs)
         return resp.json()
 
     def get_accounts(self, address):
@@ -50,7 +48,7 @@ class Account:
         :param address: A valid Ark address.
         :return:
         """
-        resp = self.api.get("api/accounts", address=address)
+        resp = self.get("api/accounts", address=address)
         return resp.json()
 
     def get_top_accounts(self, **kwargs):
@@ -59,5 +57,5 @@ class Account:
         :param kwargs: Optionnal parameters. limit, offset
         :return:
         """
-        resp = self.api.get("api/accounts/top", **kwargs)
+        resp = self.get("api/accounts/top", **kwargs)
         return resp.json()

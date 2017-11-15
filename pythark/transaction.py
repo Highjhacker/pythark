@@ -1,12 +1,10 @@
 from .api import API
 
 
-class Transaction:
+class Transaction(API):
     """
     Operations for Transactions.
     """
-    def __init__(self):
-        self.api = API()
 
     def get_transaction(self, id):
         """ Get a single transaction.
@@ -14,7 +12,7 @@ class Transaction:
         :param id: A valid Transaction id.
         :return:
         """
-        resp = self.api.get("api/transactions/get", id=id)
+        resp = self.get("api/transactions/get", id=id)
         return resp.json()
 
     def get_transactions(self, **kwargs):
@@ -24,7 +22,7 @@ class Transaction:
         ownerAddress, senderId, recipientId, amount, fee
         :return:
         """
-        resp = self.api.get("api/transactions", **kwargs)
+        resp = self.get("api/transactions", **kwargs)
         return resp.json()
 
     def get_unconfirmed_transaction(self, id):
@@ -33,7 +31,7 @@ class Transaction:
         :param id: A valid Transaction id.
         :return:
         """
-        resp = self.api.get("api/transactions/unconfirmed/get", id=id)
+        resp = self.get("api/transactions/unconfirmed/get", id=id)
         return resp.json()
 
     def get_unconfirmed_transactions(self, **kwargs):
@@ -42,5 +40,5 @@ class Transaction:
         :param kwargs: Optionnal parameters. senderPublicKey, address
         :return:
         """
-        resp = self.api.get("api/transactions/unconfirmed", **kwargs)
+        resp = self.get("api/transactions/unconfirmed", **kwargs)
         return resp.json()

@@ -1,4 +1,4 @@
-Arky==1.0rc1
+-e https://github.com/ArkEcosystem/arky/archive/aip11.zip
 base58==0.2.5
 certifi==2017.11.5
 cffi==1.11.2

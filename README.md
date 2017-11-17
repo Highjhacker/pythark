@@ -130,6 +130,7 @@ print(t.get_status())
 - [x] Sample flask app.
 - [ ] Sample CLI app.
 - [ ] Integrate it to the DiscArk bot.
+- [x] Allow to post a new transaction.
 
 ## Authors
 

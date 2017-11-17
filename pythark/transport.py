@@ -1,4 +1,6 @@
 from .api import API
+import arky
+from arky import rest
 
 
 class Transport(API):
@@ -50,12 +52,15 @@ class Transport(API):
         resp = self.get("peer/transactions")
         return resp.json()
 
-    def post_transaction(self):
+    def post_transaction(self, network, recipientId, amount, secret, vendorField="", secondSecret=""):
         """ Post a new transaction.
 
         :return:
         """
-        print("Not yet implemented.")
+        rest.use(network)
+
+        return arky.core.sendTransaction(recipientId=recipientId, amount=amount, vendorField=vendorField, secret=secret,
+                                         secondSecret=secondSecret)
 
     def get_transactions_from_ids(self, ids):
         """ Get a list of transactions by ids.

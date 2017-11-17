@@ -55,7 +55,13 @@ class Transport(API):
     def post_transaction(self, network, recipientId, amount, secret, vendorField="", secondSecret=""):
         """ Post a new transaction.
 
-        :return:
+        :param network: The network we want to use (ark, dark, ...)
+        :param recipientId: A valid Ark address.
+        :param amount: Amount of currency we want to transfer.
+        :param secret: BIP39 seedpass.
+        :param vendorField: Optionnal vendorField.
+        :param secondSecret: Optionnal BIP39 second seedpass.
+        :return: 
         """
         rest.use(network)
 

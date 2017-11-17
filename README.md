@@ -116,6 +116,18 @@ print(t.get_status())
 >>> {'success': True, 'height': 2535061, 'forgingAllowed': True, 'currentSlot': 2560155, 'header': {'id': '17084042248047495221', 'height': 2535061, 'version': 0, 'totalAmount': 0, 'totalFee': 0, 'reward': 200000000, 'payloadHash': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'payloadLength': 0, 'timestamp': 20481240, 'numberOfTransactions': 0, 'previousBlock': '9903476536476021910', 'generatorPublicKey': '0354319db3f22fb8d4588a09ebbb3e91631cbc2202ba58c69149b75c1a47eb7686', 'blockSignature': '3045022100d7988e19980767d259072d4884f359f95d5ca99bc99d909f70b55b1eadde5921022000b8eb45266a1ad7943d18abe45e5487da680677272a26f7ede78c63a0d545bb'}}
 ```
 
+```python
+from pythark import Transport
+transport = Transport()
+resp = transport.post_transaction(
+        "dark", # Network
+        "DDvQqwqPXKd5P8dLAroFsnKR5Q3tKUtvnp", # RecipientAddress
+        1000000, # Amount
+        "firstPassphrase", # First passphrase, mandatory
+        "vendorField", # Vendor field, optionnal
+        "secondPassphrase") # Second passphrase, optionnal
+```
+
 ## TODOS
 
 - [x] Core code.

@@ -12,8 +12,12 @@ Ark API Wrapper in Python.
 
 ## Installation
 
+Pythark uses Arky to create a new transaction, if you want to use this feature 
+you will need to install Arky too.
+
 ```shell
 pip install pythark
+pip install https://github.com/ArkEcosystem/arky/archive/aip11.zip
 ```
 
 ## Application Example

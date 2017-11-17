@@ -29,8 +29,11 @@ class TestTransport(unittest.TestCase):
         resp = transport.get_transactions()
         self.assertEqual(resp["success"], True)
 
-    #def test_post_new_transaction(self):
-    #    print("Not implemented")
+    def test_post_new_transaction(self):
+        # Tested and approved.
+        transport = Transport()
+        resp = transport.post_transaction("dark", "DDvQqwqPXKd5P8dLAroFsnKR5Q3tKUtvnp", 1000000, "meat feed erupt toe crow treat rhythm dot angry marriage bicycle path")
+        self.assertEqual(resp["success"], False)
 
     def test_get_transactions_from_ids(self):
         transport = Transport()

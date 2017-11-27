@@ -23,7 +23,7 @@ pip install https://github.com/ArkEcosystem/arky/archive/aip11.zip
 ## Application Example
 
 - [PytharkFlask](https://github.com/Highjhacker/PytharkFlask) - Example of a web application using Flask and Pythark
-
+- [PytharkCLI](https://github.com/Highjhacker/PytharkCLI) - Example of a CLI application using Click and Pythark
 ## Usage
 
 ### Account
@@ -146,7 +146,7 @@ resp = transport.post_transaction(
     - [ ] Windows support ?
 - [ ] Better errors handling for the models methods.
 - [x] Sample flask app.
-- [ ] Sample CLI app.
+- [x] Sample CLI app.
 - [ ] Integrate it to the DiscArk bot.
 - [x] Allow to post a new transaction.
 

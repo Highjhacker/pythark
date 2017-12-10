@@ -155,7 +155,8 @@ resp = transport.post_transaction(
 - [x] Sample CLI app.
 - [ ] Integrate it to the DiscArk bot.
 - [x] Allow to post a new transaction.
-- [ ] Allow to specify a network to use (so we can query on the devnet, mainnet, ..)
+- [x] Allow to specify a network to use (so we can query on the devnet, mainnet, ..)
+    - [ ] Functionnal but can be better.
 
 ## Authors
 

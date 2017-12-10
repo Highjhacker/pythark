@@ -13,7 +13,13 @@ Ark API Wrapper in Python.
 ## Installation
 
 Pythark uses Arky to create a new transaction, if you want to use this feature 
-you will need to install Arky too.
+you will need to install Arky too. 
+
+Since Arky can works with the nano s ledger now, you need to install these dependencies :
+
+```shell
+sudo apt-get install python3-dev libusb-1.0-0-dev libudev-dev
+```
 
 ```shell
 pip install pythark

@@ -1,6 +1,12 @@
 from .api import API
-import arky
-from arky import rest
+from logzero import logger
+
+try:
+    import arky
+    from arky import rest
+except ImportError as error:
+    logger.info("You don't have Arky installed, you can't post a new transaction without this module.")
+    logger.info(error)
 
 
 class Transport(API):
@@ -61,7 +67,7 @@ class Transport(API):
         :param secret: BIP39 seedpass.
         :param vendorField: Optionnal vendorField.
         :param secondSecret: Optionnal BIP39 second seedpass.
-        :return: 
+        :return:
         """
         rest.use(network)
 

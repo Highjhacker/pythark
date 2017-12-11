@@ -52,7 +52,7 @@ class API:
                 return r
 
 
-def get_main_network_headers(self):
+def get_main_network_headers():
     headers = {
         "nethash": "6e84d08bd299ed97c212c886c98a57e36545c8f5d645ca7eeae63a8bd62d8988",
         "version": "1.0.1",
@@ -61,7 +61,7 @@ def get_main_network_headers(self):
     return headers
 
 
-def get_dev_network_headers(self):
+def get_dev_network_headers():
     headers = {
         "nethash": "578e820911f24e039733b45e4882b73e301f813a0d2c31330dafda84534ffa23",
         "version": "1.1.1",
@@ -70,7 +70,7 @@ def get_dev_network_headers(self):
     return headers
 
 
-def get_kapu_main_network_headers(self):
+def get_kapu_main_network_headers():
     headers = {
         "nethash": "313ea34c8eb705f79e7bc298b788417ff3f7116c9596f5c9875e769ee2f4ede1",
         "version": "0.3.0",

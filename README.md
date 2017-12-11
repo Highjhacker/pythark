@@ -32,6 +32,22 @@ pip install https://github.com/ArkEcosystem/arky/archive/aip11.zip
 - [PytharkCLI](https://github.com/Highjhacker/PytharkCLI) - Example of a CLI application using Click and Pythark
 ## Usage
 
+### Network
+Since the version 0.1.3, Pythark can now interact with others network than the main one. If you want
+to query on the devnet for example, you will need to specify it like this : 
+
+```python
+from pythark import Peer
+# It's not mandatory to specify the network, by default the main network will be used.
+# So : peer = Peer() is still correct.
+peer = Peer("dev") # or peer = Peer(network="dev")
+print(peer.get_peers())
+
+>>> {'success': True, 'peers': [{'ip': '167.114.29.62', 'port': 4002, 'version': '1.1.0', 'errors': 0, 'os': 'linux4.4.0-79-generic', 'height': 2056284, 'status': 'OK', 'delay': 33}, 
+}...
+
+```
+
 ### Account
 
 ```python

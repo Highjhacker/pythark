@@ -3,7 +3,11 @@ import random
 
 BASE_URL = "http://37.59.129.164:4001/" #"https://api.arknode.net/"
 BASE_URL_DEV = "http://167.114.29.52:4002/"
+<<<<<<< HEAD
 FALLBACKS_MAIN_ADDRESSES = []
+=======
+BASE_URL_KAPUMAIN = "https://walletapi.kapu.one/"
+>>>>>>> fa17f3c0ccf62db2198289acad9bc010b9582d3a
 FALLBACKS_DEV_ADDRESSES = []
 
 
@@ -49,6 +53,11 @@ class API:
             "version": "1.1.1",
             "port": "4002"
         }
+        headers_kapu_main = {
+            "nethash": "313ea34c8eb705f79e7bc298b788417ff3f7116c9596f5c9875e769ee2f4ede1",
+            "version": "0.3.0",
+            "port": "9700"
+        }
         payload = {name: kwargs[name] for name in kwargs if kwargs[name] is not None}
         try:
             if self.network == 'main':
@@ -57,6 +66,10 @@ class API:
                     return r
             if self.network == 'dev':
                 r = requests.get("{0}{1}".format(BASE_URL_DEV, endpoint), headers=headers_dev, params=payload)
+                if r.status_code == 200:
+                    return r
+            if self.network == 'kapu':
+                r = requests.get("{0}{1}".format(BASE_URL_KAPUMAIN, endpoint), headers=headers_kapu_main, params=payload)
                 if r.status_code == 200:
                     return r
         except requests.exceptions.Timeout:

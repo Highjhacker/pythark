@@ -1,14 +1,18 @@
 import requests
 import random
 
-BASE_URL = "https://api.arknode.net/"
+BASE_URL = "http://37.59.129.164:4001/" #"https://api.arknode.net/"
 BASE_URL_DEV = "http://167.114.29.52:4002/"
+FALLBACKS_MAIN_ADDRESSES = []
 FALLBACKS_DEV_ADDRESSES = []
 
 
-def populate_fallback(fallback):
+def populate_fallback(fallback, network):
     from . import Peer
-    p = Peer("dev")
+    if network == 'dev':
+        p = Peer("dev")
+    else:
+        p = Peer()
     r = p.get_peers()
     for peer in r["peers"]:
         if peer["delay"] <= 50:
@@ -56,9 +60,13 @@ class API:
                 if r.status_code == 200:
                     return r
         except requests.exceptions.Timeout:
-            populate_fallback(FALLBACKS_DEV_ADDRESSES)
-            url = select_random_ip(FALLBACKS_DEV_ADDRESSES) + "/"
-            r = requests.get("{0}{1}".format(url, endpoint), headers=headers_dev, params=payload)
+            if self.network == "dev":
+                populate_fallback(FALLBACKS_DEV_ADDRESSES)
+                url = select_random_ip(FALLBACKS_DEV_ADDRESSES) + "/"
+            else:
+                populate_fallback(FALLBACKS_MAIN_ADDRESSES)
+                url = select_random_ip(FALLBACKS_MAIN_ADDRESSES) + "/"
+            r = requests.get("{0}{1}".format(url, endpoint), headers=headers_dev if self.network == 'dev' else headers_main, params=payload)
             if r.status_code == 200:
                 return r
 

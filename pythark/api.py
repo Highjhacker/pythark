@@ -3,11 +3,8 @@ import random
 
 BASE_URL = "http://37.59.129.164:4001/" #"https://api.arknode.net/"
 BASE_URL_DEV = "http://167.114.29.52:4002/"
-<<<<<<< HEAD
 FALLBACKS_MAIN_ADDRESSES = []
-=======
 BASE_URL_KAPUMAIN = "https://walletapi.kapu.one/"
->>>>>>> fa17f3c0ccf62db2198289acad9bc010b9582d3a
 FALLBACKS_DEV_ADDRESSES = []
 
 

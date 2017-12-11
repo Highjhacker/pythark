@@ -3,6 +3,15 @@ All notable changes to this project will be documented in this file.
 
 ## Released
 
+## [0.1.3] - 2017-12-10
+### Added
+- Can now handle others network (Kapu, Dev)
+- If the request time out, a fallback url will be generated and used
+
+### Changed
+
+### Removed
+
 ## [0.1.2] - 2017-12-10
 ### Added
 - Try catch block for the Arky import, just in case.

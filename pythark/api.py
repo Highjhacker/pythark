@@ -39,15 +39,15 @@ class API:
                 return r
         except requests.exceptions.Timeout:
             if self.network == "dev":
-                populate_fallback(FALLBACKS_DEV_ADDRESSES)
+                populate_fallback(FALLBACKS_DEV_ADDRESSES, self.network)
                 url = select_random_ip(FALLBACKS_DEV_ADDRESSES) + "/"
                 r = requests.get("{0}{1}".format(url, endpoint), headers=headers_dev, params=payload)
             elif self.network == "kapu":
-                populate_fallback(FALLBACKS_KAPU_ADDRESSES)
+                populate_fallback(FALLBACKS_KAPU_ADDRESSES, self.network)
                 url = select_random_ip(FALLBACKS_KAPU_ADDRESSES) + "/"
                 r = requests.get("{0}{1}".format(url, endpoint), headers=headers_kapu_main, params=payload)
             else:
-                populate_fallback(FALLBACKS_MAIN_ADDRESSES)
+                populate_fallback(FALLBACKS_MAIN_ADDRESSES, self.network)
                 url = select_random_ip(FALLBACKS_MAIN_ADDRESSES) + "/"
                 r = requests.get("{0}{1}".format(url, endpoint), headers=headers_main, params=payload)
             if r.status_code == 200:

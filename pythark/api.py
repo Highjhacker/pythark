@@ -1,5 +1,6 @@
 import requests
 import random
+from retrying import retry
 
 BASE_URL = "https://api.arknode.net/" # "http://37.59.129.164:4001/"
 BASE_URL_DEV = "http://167.114.29.52:4002/"
@@ -17,6 +18,7 @@ class API:
     def __init__(self, network="main"):
         self.network = network
 
+    @retry(stop_max_attempt_number=10, wait_fixed=10000)
     def get(self, endpoint, **kwargs):
         """ Do a HTTP get request to a specified endpoint (with optionnal parameters).
 
@@ -52,6 +54,9 @@ class API:
                 r = requests.get("{0}{1}".format(url, endpoint), headers=headers_main, params=payload)
             if r.status_code == 200:
                 return r
+        except requests.exceptions.ConnectionError as e:
+            print("Connection error : ", e)
+
 
 
 def get_main_network_headers():

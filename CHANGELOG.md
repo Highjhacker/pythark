@@ -3,6 +3,16 @@ All notable changes to this project will be documented in this file.
 
 ## Released
 
+## [0.1.4] - 2017-12-13
+### Added
+- Updated the docs for the network usage
+- Added the "retrying" package
+- Added a retry decorator to the get function
+- Added a new catch on the get function
+### Changed
+
+
+
 ## [0.1.3] - 2017-12-10
 ### Added
 - Can now handle others network (Kapu, Dev)

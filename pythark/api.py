@@ -1,5 +1,6 @@
 import requests
 import random
+import json
 from retrying import retry
 
 BASE_URL = "https://api.arknode.net/" # "http://37.59.129.164:4001/"
@@ -28,34 +29,36 @@ class API:
         """
         payload = {name: kwargs[name] for name in kwargs if kwargs[name] is not None}
         try:
-            if self.network == 'main':
+            if self.network == "main":
                 headers_main = get_main_network_headers()
                 r = requests.get("{0}{1}".format(BASE_URL, endpoint), headers=headers_main, params=payload, timeout=10)
-            if self.network == 'dev':
+            if self.network == "dark":
                 headers_dev = get_dev_network_headers()
                 r = requests.get("{0}{1}".format(BASE_URL_DEV, endpoint), headers=headers_dev, params=payload, timeout=10)
-            if self.network == 'kapu':
+            if self.network == "kapu":
                 headers_kapu_main = get_kapu_main_network_headers()
                 r = requests.get("{0}{1}".format(BASE_URL_KAPUMAIN, endpoint), headers=headers_kapu_main, params=payload, timeout=10)
             if r.status_code == 200:
                 return r
         except requests.exceptions.Timeout:
-            if self.network == "dev":
+            if self.network == "dark":
                 populate_fallback(FALLBACKS_DEV_ADDRESSES, self.network)
                 url = select_random_ip(FALLBACKS_DEV_ADDRESSES) + "/"
-                r = requests.get("{0}{1}".format(url, endpoint), headers=headers_dev, params=payload)
+                r = requests.get("{0}{1}".format(url, endpoint), headers=headers_dev, params=payload, timeout=10)
             elif self.network == "kapu":
                 populate_fallback(FALLBACKS_KAPU_ADDRESSES, self.network)
                 url = select_random_ip(FALLBACKS_KAPU_ADDRESSES) + "/"
-                r = requests.get("{0}{1}".format(url, endpoint), headers=headers_kapu_main, params=payload)
+                r = requests.get("{0}{1}".format(url, endpoint), headers=headers_kapu_main, params=payload, timeout=10)
             else:
                 populate_fallback(FALLBACKS_MAIN_ADDRESSES, self.network)
                 url = select_random_ip(FALLBACKS_MAIN_ADDRESSES) + "/"
-                r = requests.get("{0}{1}".format(url, endpoint), headers=headers_main, params=payload)
+                r = requests.get("{0}{1}".format(url, endpoint), headers=headers_main, params=payload, timeout=10)
             if r.status_code == 200:
                 return r
         except requests.exceptions.ConnectionError as e:
             print("Connection error : ", e)
+        except requests.exceptions.ReadTimeout as e:
+            print("ReadTimeOut error : ", e)
 
 
 

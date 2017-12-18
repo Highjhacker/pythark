@@ -3,6 +3,15 @@ All notable changes to this project will be documented in this file.
 
 ## Released
 
+## [0.1.5] - 2017-12-18
+### Added
+- Added the retrying package in the dependencies of Pythark
+- Added a new catch on the get function (ReadTimeout)
+- Added the parameter "timeout" inside the except.TimeOut block in api.py
+
+### Changed
+- Changed the network from "dev" to "dark" to be in compliance with Arky.
+
 ## [0.1.4] - 2017-12-13
 ### Added
 - Updated the docs for the network usage

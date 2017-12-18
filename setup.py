@@ -11,7 +11,7 @@ def read(fname):
 
 setup(
     name="Pythark",
-    version="0.1.4",
+    version="0.1.5",
     description="Ark API Wrapper",
     long_description=read("README.md"),
     author="Highjhacker",
@@ -22,7 +22,8 @@ setup(
     url="https://github.com/Highjhacker/pythark",
     install_requires=[
         'requests',
-        'logzero'
+        'logzero',
+        'retrying'
     ],
     classifiers=[
         "Development Status :: 4 - Beta",

@@ -3,6 +3,12 @@ All notable changes to this project will be documented in this file.
 
 ## Released
 
+## [0.1.6] - 2017-02-07
+### Added
+- Added the Kapu main network.
+- Fix for get_common_blocks.
+
+
 ## [0.1.5] - 2017-12-18
 ### Added
 - Added the retrying package in the dependencies of Pythark

@@ -11,7 +11,7 @@ def read(fname):
 
 setup(
     name="Pythark",
-    version="0.1.5",
+    version="0.1.6",
     description="Ark API Wrapper",
     long_description=read("README.md"),
     author="Highjhacker",

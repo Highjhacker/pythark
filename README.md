@@ -49,6 +49,8 @@ print(peer.get_peers())
 
 You can use this with all the Pythark functions.
 
+The currently available networks are the following : main, dev, dark, kapu.
+
 
 ### Account
 

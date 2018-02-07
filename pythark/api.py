@@ -32,7 +32,7 @@ class API:
             if self.network == "main":
                 headers_main = get_main_network_headers()
                 r = requests.get("{0}{1}".format(BASE_URL, endpoint), headers=headers_main, params=payload, timeout=10)
-            if self.network == "dark":
+            if self.network == "dark" or self.network == "dev":
                 headers_dev = get_dev_network_headers()
                 r = requests.get("{0}{1}".format(BASE_URL_DEV, endpoint), headers=headers_dev, params=payload, timeout=10)
             if self.network == "kapu":
@@ -41,7 +41,7 @@ class API:
             if r.status_code == 200:
                 return r
         except requests.exceptions.Timeout:
-            if self.network == "dark":
+            if self.network == "dark" or self.network == "dev":
                 populate_fallback(FALLBACKS_DEV_ADDRESSES, self.network)
                 url = select_random_ip(FALLBACKS_DEV_ADDRESSES) + "/"
                 r = requests.get("{0}{1}".format(url, endpoint), headers=headers_dev, params=payload, timeout=10)
@@ -60,6 +60,10 @@ class API:
         except requests.exceptions.ReadTimeout as e:
             print("ReadTimeOut error : ", e)
 
+    def post(self, endpoint, **kwargs):
+        payload = {name: kwargs[name] for name in kwargs if kwargs[name] is not None}
+        r = requests.post("{0}{1}".format(BASE_URL, endpoint), headers=get_dev_network_headers(), params=payload)
+        return r
 
 
 def get_main_network_headers():
@@ -82,9 +86,9 @@ def get_dev_network_headers():
 
 def get_kapu_main_network_headers():
     headers = {
-        "nethash": "313ea34c8eb705f79e7bc298b788417ff3f7116c9596f5c9875e769ee2f4ede1",
-        "version": "0.3.0",
-        "port": "9700"
+        "nethash": "6e84d08bd299ed97c212c886c98a57e36545c8f5d645ca7eeae63a8bd62d8988",
+        "version": "1.0.1",
+        "port": "4001"
     }
     return headers
 

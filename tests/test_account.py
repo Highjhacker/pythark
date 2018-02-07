@@ -8,6 +8,16 @@ class TestAccount(unittest.TestCase):
         resp = account.get_balance("ANwjGUcVbLXpqbBUWbjUBQWkr4MWVDuJu9")
         self.assertEqual(resp["success"], True)
 
+    def test_getBalanceDevNetwork(self):
+        account = Account("dev")
+        resp = account.get_balance("DU8i1HWoaaatLKzoA9FJPvX34FdNPzFkYr")
+        self.assertEqual(resp["success"], True)
+
+    def test_getBalanceKapuMainNetwork(self):
+        account = Account("kapu")
+        resp = account.get_balance("KUQc9hNoG4o81t1gwkYTapPqJrxp8Zxf9Y")
+        self.assertEqual(resp["success"], True)
+
     def test_getPublicKey(self):
         account = Account()
         resp = account.get_public_key("ANwjGUcVbLXpqbBUWbjUBQWkr4MWVDuJu9")

@@ -28,7 +28,7 @@ class Transport(API):
         :param ids: List of Block ids.
         :return:
         """
-        resp = self.get("peer/blocks/common", ids=ids)
+        resp = self.get("peer/blocks/common", ids=','.join(ids))
         return resp.json()
 
     def get_blocks(self, address):
@@ -74,13 +74,19 @@ class Transport(API):
         return arky.core.sendTransaction(recipientId=recipientId, amount=amount, vendorField=vendorField, secret=secret,
                                          secondSecret=secondSecret)
 
+    def post_transaction_bis(self, recipientId, amount, secret, secondSecret="", vendorField=None):
+        transactions = []
+
+        resp = self.post("peer/transactions", recipientId=recipientId, amount=amount, secret=secret, secondSecret=secondSecret, vendorField=vendorField)
+        return resp.json()
+
     def get_transactions_from_ids(self, ids):
         """ Get a list of transactions by ids.
 
         :param ids: A list of valid Transaction id
         :return:
         """
-        resp = self.get("peer/transactionsFromIds", ids=ids)
+        resp = self.get("peer/transactionsFromIds", ids=','.join(ids))
         return resp.json()
 
     def get_height(self):

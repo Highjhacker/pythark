@@ -92,7 +92,7 @@ print(b.get_block("5927359504701109797"))
 ```python
 from pythark import Delegate
 d = Delegate()
-print(d.search_delegates())
+print(d.search_delegates("dr"))
 
 >>> {'success': True, 'delegates': [{'username': 'dr10', 'address': 'ANwjGUcVbLXpqbBUWbjUBQWkr4MWVDuJu9', 'publicKey': '031641ff081b93279b669f7771b3fbe48ade13eadb6d5fd85bdd025655e349f008', 'vote': '147614629879279', 'producedblocks': 30607, 'missedblocks': 190}, {'username': 'drusilla', 'address': 'AGzLMjoUiLbccC4YpaDsMRwHaoUwCoorQG', 'publicKey': '038dfc041c7e609f254b2cf38de4b55e02dff9e743497f5cf6b67d49d8e44978ce', 'vote': '0', 'producedblocks': 0, 'missedblocks': 0}]}
 
